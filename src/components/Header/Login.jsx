@@ -48,8 +48,28 @@ export default function Login(){
                         label="Email: "
                         placeholder="Enter your email"
                         type="email"
-                        {...register("email")}
+                        {...register("email", {
+                            required: true,
+                            validate: {
+                                matchPatern: (value) => /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g.test(value) || "Email address must be a valid address"
+                            }
+                        })}
                         />
+                        <Input 
+                        label="Password:"
+                        placeholder="Enter you password"
+                        type="password"
+                        {...register("password", {
+                            required: true,
+                            validate: {
+                                matchPatern: (value) => /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm.test(value) || "Password must be a valid password"
+                            }
+                        })}
+                        />
+                        <Button
+                        type="submit" 
+                        className="w-full"
+                        >Sign In</Button>
                     </div>
                 </form>
             </div>
