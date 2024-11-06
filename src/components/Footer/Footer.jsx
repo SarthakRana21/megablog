@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
 
 function Footer() {
-  const [count, setCount] = useState(0);
+
   return (
        <section className="relative overflow-hidden py-10 bg-gray-400 border border-t-2 border-t-black w-full">
             <div className="relative z-10 mx-auto max-w-7xl px-4">

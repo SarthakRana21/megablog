@@ -1,4 +1,4 @@
-import { Container, Logo, LogoutBtn } from "../index"
+import { Container, Logo, LogoutBtn } from "./index"
 import authService from "../../appwrite/auth";
 import { useSelector } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
